@@ -1,22 +1,22 @@
 
-async function getStories(){
-const stories= await axios.get('https://hack-or-snooze-v3.herokuapp.com/stories')
-console.log('story list:',stories)
-return stories
-}
+// async function getStories(){
+// const stories= await axios.get('https://hack-or-snooze-v3.herokuapp.com/stories')
+// console.log('story list:',stories)
+// return stories
+// }
 
 
-async function login(){
-const result=axios.post('https://hack-or-snooze-v3.herokuapp.com/login',
-{
-  "user": {
-      "username": "theDude2",
-      "password": "dudeabides"
-  }
-})
-console.log('login data',result)
-return result
-}
+// async function login(){
+// const result=axios.post('https://hack-or-snooze-v3.herokuapp.com/login',
+// {
+//   "user": {
+//       "username": "theDude2",
+//       "password": "dudeabides"
+//   }
+// })
+// console.log('login data',result)
+// return result
+// }
 
 
 // async function createStory(){
@@ -33,28 +33,28 @@ return result
 
 // }
 
- axios.delete('https://hack-or-snooze-v3.herokuapp.com/stories/fba9e451-7c99-49a3-9328-941535553445',{
- "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRoZUR1ZGUyIiwiaWF0IjoxNjk1NjU2Mjc3fQ.xl0M8lMQmiQRpTT_zSXakYrh4jvuM4zMW-WRGi8SfrA"
-})
+//  axios.delete('https://hack-or-snooze-v3.herokuapp.com/stories/fba9e451-7c99-49a3-9328-941535553445',{
+//  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRoZUR1ZGUyIiwiaWF0IjoxNjk1NjU2Mjc3fQ.xl0M8lMQmiQRpTT_zSXakYrh4jvuM4zMW-WRGi8SfrA"
+// })
 
 
-const BASE_URL='https://hack-or-snooze-v3.herokuapp.com'
+// const BASE_URL='https://hack-or-snooze-v3.herokuapp.com'
 
-const storyId='054823b1-4448-47c7-aa3c-638806116030'
-const author="Eddie"
-const token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRoZUR1ZGUyIiwiaWF0IjoxNjk1NTcxMTg0fQ.6D6GJSWdQlRsHOLS7cSeI3DXHHz2Z05yKwwS2Dl2VAk"
-const storyURL="http://google.com"
-const userName="theDude2"
-const password="dudeabides"
-const favorites=[]
-const ownStories=[]
-
-
+// const storyId='054823b1-4448-47c7-aa3c-638806116030'
+// const author="Eddie"
+// const token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRoZUR1ZGUyIiwiaWF0IjoxNjk1NTcxMTg0fQ.6D6GJSWdQlRsHOLS7cSeI3DXHHz2Z05yKwwS2Dl2VAk"
+// const storyURL="http://google.com"
+// const userName="theDude2"
+// const password="dudeabides"
+// const favorites=[]
+// const ownStories=[]
 
 
-//GET STORY LIST
-const storyList =  axios.get(`${BASE_URL}/stories?skip=0&limit=25`)
-console.log('list of  stories',storyList)
+
+
+// //GET STORY LIST
+// const storyList =  axios.get(`${BASE_URL}/stories?skip=0&limit=25`)
+// console.log('list of  stories',storyList)
 
 //LOG IN
 // const login = axios.post(`${BASE_URL}/login`,
@@ -81,12 +81,12 @@ console.log('list of  stories',storyList)
 // // console.log("A story I wrote",addStory)
 // // // //add this to ownStories Array
 
- axios.delete(`${BASE_URL}/stories/${storyId}`,
- {
-    "token": `${token}`
+//  axios.delete(`${BASE_URL}/stories/${storyId}`,
+//  {
+//     "token": `${token}`
 
-    }
-)
+//     }
+// )
 
 //  console.log(`deleted ${storyId}`)
 
@@ -126,3 +126,30 @@ console.log('list of  stories',storyList)
 
 
 
+async function login(){
+  const result = await fetch("https://hack-or-snooze-v3.herokuapp.com/login", {
+      method: "POST",
+      body: JSON.stringify({
+          "user": {
+               "username": "theDude2",
+               "password": "dudeabides"
+          }
+      }),
+  })
+  const json = await result.json();
+  console.log(json)
+
+  const {token} = json;
+
+  // Delete the story
+  const storyId="13e00152-c8a8-4eb3-89c0-2c895cb656f5"
+  const resp = await fetch("https://hack-or-snooze-v3.herokuapp.com/stories/" + storyId + "?token=" + token ,
+  {
+    method: "DELETE"
+  });
+
+  console.log('deleted',resp);
+
+}
+
+login();
