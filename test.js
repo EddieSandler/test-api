@@ -127,3 +127,15 @@ console.log('my login',login)
 //   method: "DELETE",
 //   data: { token: token }
 // });
+
+//next steps
+/**1) user adds Stories 
+ * 2) add stories to DOM
+   3)user removes ownStories(trash icon)
+   4) remove story from DOM
+   5) user adds favorites
+   6) add favorites to DOM
+   7) user removes favorites
+   8) remove favorites from DOM
+
+**/
