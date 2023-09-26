@@ -133,11 +133,11 @@ console.log('my login',login)
  * 2) add stories to DOM
    3)user removes ownStories(trash icon)
    4) remove story from DOM
-   5) user adds favorites
+   5) user adds favorites (star icon)
    6) add favorites to DOM
    7) user removes favorites
    8) remove favorites from DOM
    10) CSS
-   11) submit
+    11) submit
 
 **/
