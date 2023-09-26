@@ -38,16 +38,20 @@
 // })
 
 
-// const BASE_URL='https://hack-or-snooze-v3.herokuapp.com'
+const BASE_URL='https://hack-or-snooze-v3.herokuapp.com'
 
-// const storyId='054823b1-4448-47c7-aa3c-638806116030'
-// const author="Eddie"
-// const token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRoZUR1ZGUyIiwiaWF0IjoxNjk1NTcxMTg0fQ.6D6GJSWdQlRsHOLS7cSeI3DXHHz2Z05yKwwS2Dl2VAk"
-// const storyURL="http://google.com"
-// const userName="theDude2"
-// const password="dudeabides"
-// const favorites=[]
-// const ownStories=[]
+const storyId='ba484935-fdb8-4754-9e0b-a57c84886945'
+
+//'80d7295d-6f56-4aa0-8873-80ebecc0d243'
+//"cfb37f4a-af37-4ee2-bbfc-ae3db592aa43"
+
+const author="Eddie"
+const token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRoZUR1ZGUyIiwiaWF0IjoxNjk1NTcxMTg0fQ.6D6GJSWdQlRsHOLS7cSeI3DXHHz2Z05yKwwS2Dl2VAk"
+const storyURL="http://google.com"
+const userName="theDude2"
+const password="dudeabides"
+const favorites=[]
+const ownStories=[]
 
 
 
@@ -57,14 +61,14 @@
 // console.log('list of  stories',storyList)
 
 //LOG IN
-// const login = axios.post(`${BASE_URL}/login`,
-// {
-//   "user": {
-//       "username": `${userName}`,
-//       "password": `${password}`
-//   }
-// })
-// console.log('my login',login)
+const login = axios.post(`${BASE_URL}/login`,
+{
+  "user": {
+      "username": `${userName}`,
+      "password": `${password}`
+  }
+})
+console.log('my login',login)
 
 //Add Story
 
@@ -154,8 +158,8 @@
 
 // login();
 
-// axios({
-//   url: `${BASE_URL}/stories/${storyId}`,
-//   method: "DELETE",
-//   data: { token: user.loginToken }
-// });
+axios({
+  url: `${BASE_URL}/stories/${storyId}`,
+  method: "DELETE",
+  data: { token: token }
+});
