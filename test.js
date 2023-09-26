@@ -138,5 +138,6 @@ console.log('my login',login)
    7) user removes favorites
    8) remove favorites from DOM
    10) CSS
+   11) submit
 
 **/
