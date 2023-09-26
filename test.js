@@ -1,10 +1,15 @@
 
+
+//retrieve list of stories
+
 // async function getStories(){
 // const stories= await axios.get('https://hack-or-snooze-v3.herokuapp.com/stories')
 // console.log('story list:',stories)
 // return stories
 // }
 
+
+//logs in user
 
 // async function login(){
 // const result=axios.post('https://hack-or-snooze-v3.herokuapp.com/login',
@@ -19,6 +24,8 @@
 // }
 
 
+//adds user story
+
 // async function createStory(){
 
 //   const story= await axios.post('https://hack-or-snooze-v3.herokuapp.com/stories',{
@@ -32,10 +39,6 @@
 // console.log(story)
 
 // }
-
-//  axios.delete('https://hack-or-snooze-v3.herokuapp.com/stories/fba9e451-7c99-49a3-9328-941535553445',{
-//  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRoZUR1ZGUyIiwiaWF0IjoxNjk1NjU2Mjc3fQ.xl0M8lMQmiQRpTT_zSXakYrh4jvuM4zMW-WRGi8SfrA"
-// })
 
 
 const BASE_URL='https://hack-or-snooze-v3.herokuapp.com'
@@ -85,48 +88,7 @@ console.log('my login',login)
 // // console.log("A story I wrote",addStory)
 // // // //add this to ownStories Array
 
-//  axios.delete(`${BASE_URL}/stories/${storyId}`,
-//  {
-//     "token": `${token}`
 
-//     }
-// )
-
-//  console.log(`deleted ${storyId}`)
-
-// // // console.log('deleted story with id ',`${storyId}`)
-// // // //remove from my stories array
-
-// // const killThese=['d3a5aa40-182f-4982-8164-46dcc8e098db',
-// // 'e2ac0653-5443-4ee2-b781-4030cc72b27d',
-// // '0d5a8437-f569-4ccb-ac9e-50a2b6116b65',
-// // '5ac4f9aa-fa7f-468a-aedc-824778ef824e',
-// // '5df1c88f-6480-4887-9efa-3f24b0ba20a1',
-// // '1818c95f-c30e-44a5-8966-ec27862719f6' ]
-
-// console.log(axios.delete(`${BASE_URL}/stories/${storyId}`,
-// {
-//   "token":`${token}`
-// }))
-
-// //  axios.delete(`${BASE_URL}/stories/${storyId}`,
-
-// //   {
-// //     "token":`${token}`
-// //   })
-
-
-//   const myFavorites=axios.post(`${BASE_URL}/users/${userName}/favorites/${storyId}`,
-//   {
-//     "token": `${token}`
-// })
-// console.log('my favs: ',myFavorites)
-
-
-// async function delId(storyId,token){
-//  await  axios.delete(`${BASE_URL}/users/${userName}/favorites/5df1c88f-6480-4887-9efa-3f24b0ba20a1`, { params: { token: token } })
-//  console.log('delete', storyId,'with token', token,'user',userName)
-// }
 
 
 
@@ -158,8 +120,10 @@ console.log('my login',login)
 
 // login();
 
-axios({
-  url: `${BASE_URL}/stories/${storyId}`,
-  method: "DELETE",
-  data: { token: token }
-});
+//removes stories
+
+// axios({
+//   url: `${BASE_URL}/stories/${storyId}`,
+//   method: "DELETE",
+//   data: { token: token }
+// });
