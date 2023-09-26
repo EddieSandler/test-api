@@ -126,30 +126,36 @@
 
 
 
-async function login(){
-  const result = await fetch("https://hack-or-snooze-v3.herokuapp.com/login", {
-      method: "POST",
-      body: JSON.stringify({
-          "user": {
-               "username": "theDude2",
-               "password": "dudeabides"
-          }
-      }),
-  })
-  const json = await result.json();
-  console.log(json)
+// async function login(){
+//   const result = await fetch("https://hack-or-snooze-v3.herokuapp.com/login", {
+//       method: "POST",
+//       body: JSON.stringify({
+//           "user": {
+//                "username": "theDude2",
+//                "password": "dudeabides"
+//           }
+//       }),
+//   })
+//   const json = await result.json();
+//   console.log(json)
 
-  const {token} = json;
+//   const {token} = json;
 
-  // Delete the story
-  const storyId="13e00152-c8a8-4eb3-89c0-2c895cb656f5"
-  const resp = await fetch("https://hack-or-snooze-v3.herokuapp.com/stories/" + storyId + "?token=" + token ,
-  {
-    method: "DELETE"
-  });
+//   // Delete the story
+//   const storyId="13e00152-c8a8-4eb3-89c0-2c895cb656f5"
+//   const resp = await fetch("https://hack-or-snooze-v3.herokuapp.com/stories/" + storyId + "?token=" + token ,
+//   {
+//     method: "DELETE"
+//   });
 
-  console.log('deleted',resp);
+//   console.log('deleted',resp);
 
-}
+// }
 
-login();
+// login();
+
+// axios({
+//   url: `${BASE_URL}/stories/${storyId}`,
+//   method: "DELETE",
+//   data: { token: user.loginToken }
+// });
