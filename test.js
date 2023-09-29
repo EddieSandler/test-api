@@ -107,12 +107,12 @@ console.log('my login',login)
 // // // //add this to ownStories Array
 
 
- axios.delete(`${BASE_URL}/stories/${storyId}`,
- {
-    "token": `${token}`
+//  axios.delete(`${BASE_URL}/stories/${storyId}`,
+//  {
+//     "token": `${token}`
 
-    }
-)
+//     }
+// )
 
 //  console.log(`deleted ${storyId}`)
 
